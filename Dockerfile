@@ -2,7 +2,7 @@ FROM centos:centos6
 MAINTAINER Yogesh Pandit
 
 RUN sed -i "s/enabled=1/enabled=0/" /etc/yum/pluginconf.d/fastestmirror.conf
-RUN yum clean all; yum install -y wget sudo which tar vim openssh-server openssh-clients openssl-devel openssl mysql mysql-connector-java mysql-libs mysql-server openldap-clients openldap-servers zip
+RUN yum clean all; yum install -y wget sudo which tar vim expect openssh-server openssh-clients openssl-devel openssl mysql mysql-connector-java mysql-libs mysql-server openldap-clients openldap-servers zip
 
 RUN wget nginx.org/packages/centos/6/noarch/RPMS/nginx-release-centos-6-0.el6.ngx.noarch.rpm; rpm -Uvh nginx-release-centos-6-0.el6.ngx.noarch.rpm; rm nginx-release-centos-6-0.el6.ngx.noarch.rpm; yum install -y nginx; yum update -y libselinux
 
